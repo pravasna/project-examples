@@ -17,9 +17,9 @@
 buildscript {
   repositories {
     jcenter()
-    dependencies {
-      classpath(group: 'org.jfrog.buildinfo', name: 'build-info-extractor-gradle', version: '4.+')
-    }
+    // dependencies {
+    //   classpath(group: 'org.jfrog.buildinfo', name: 'build-info-extractor-gradle', version: '4.+')
+    // }
   }
 }
 
@@ -33,7 +33,7 @@ allprojects {
   version = currentVersion
   status = 'Integration'
   repositories {
-  	maven {
+    maven {
         url "http://10.0.15.10:8081/artifactory/jcenter" // The Artifactory (preferably virtual) repository to resolve from
         // credentials {
         //     username "${artifactory_user}"
@@ -91,11 +91,11 @@ artifactory {
       // username = "${artifactory_user}" // The publisher user name
       // password = "${artifactory_password}" // The publisher password
       // This is an optional section for configuring Ivy publication (when publishIvy = true).
-      ivy {
-        ivyLayout = '[organization]/[module]/ivy-[revision].xml'
-        artifactLayout = '[organization]/[module]/[revision]/[module]-[revision](-[classifier]).[ext]'
-        mavenCompatible = true //Convert any dots in an [organization] layout value to path separators, similar to Maven's groupId-to-path conversion. True if not specified
-      }
+      // ivy {
+      //   ivyLayout = '[organization]/[module]/ivy-[revision].xml'
+      //   artifactLayout = '[organization]/[module]/[revision]/[module]-[revision](-[classifier]).[ext]'
+      //   mavenCompatible = true //Convert any dots in an [organization] layout value to path separators, similar to Maven's groupId-to-path conversion. True if not specified
+      // }
     }
     defaults {
       // Reference to Gradle configurations defined in the build script.
@@ -119,7 +119,7 @@ artifactory {
         all 'org.jfrog.*:*:1.*:*@jar*', key3: 'val3', key4: 'val4'
       }
       publishPom = true // Publish generated POM files to Artifactory (true by default)
-      publishIvy = true // Publish generated Ivy descriptor files to Artifactory (true by default)
+      // publishIvy = true // Publish generated Ivy descriptor files to Artifactory (true by default)
     }
   }
 }
