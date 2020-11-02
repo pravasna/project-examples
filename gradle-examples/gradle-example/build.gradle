@@ -35,10 +35,10 @@ allprojects {
   repositories {
   	maven {
         url "http://10.0.15.10:8081/artifactory/jcenter" // The Artifactory (preferably virtual) repository to resolve from
-        credentials {
-            username "${artifactory_user}"
-            password "${artifactory_password}"
-        }
+        // credentials {
+        //     username "${artifactory_user}"
+        //     password "${artifactory_password}"
+        // }
     }
   }
 }
@@ -88,8 +88,8 @@ artifactory {
   publish {
     repository {
       repoKey = 'libs-snapshot-local' // The Artifactory repository key to publish to
-      username = "${artifactory_user}" // The publisher user name
-      password = "${artifactory_password}" // The publisher password
+      // username = "${artifactory_user}" // The publisher user name
+      // password = "${artifactory_password}" // The publisher password
       // This is an optional section for configuring Ivy publication (when publishIvy = true).
       ivy {
         ivyLayout = '[organization]/[module]/ivy-[revision].xml'
