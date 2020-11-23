@@ -14,11 +14,6 @@ pipeline {
 
         stage ('Artifactory configuration') {
             steps {
-                rtServer (
-                    id: "ARTIFACTORY_SERVER",
-                    url: SERVER_URL,
-                    credentialsId: CREDENTIALS
-                )
 
                 rtGradleDeployer (
                     id: "GRADLE_DEPLOYER",
@@ -49,7 +44,7 @@ pipeline {
             steps {
                 rtGradleRun (
                     usesPlugin: true, // Artifactory plugin already defined in build script
-                    tool: GRADLE_TOOL, // Tool name from Jenkins configuration
+                    tool: 'GRADLE_TOOL', // Tool name from Jenkins configuration
                     rootDir: "gradle-examples/gradle-example/",
                     buildFile: 'build.gradle',
                     tasks: 'clean artifactoryPublish',
