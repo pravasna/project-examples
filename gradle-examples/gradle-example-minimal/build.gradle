@@ -26,9 +26,7 @@ buildscript {
 
 allprojects {
     repositories {
-        maven {
-            jcenter ()
-        }
+        jcenter ()
     }
 }
 
